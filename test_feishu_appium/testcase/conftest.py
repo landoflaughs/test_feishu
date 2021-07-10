@@ -4,7 +4,8 @@ from typing import List
 
 
 def get_datas(name):
-    with open(r'..\datas\test_datas.yml', encoding='utf-8') as f:
+    with open(r'D:\WORK\jenkins\connect\workspace\windows_appium\feishu_windows_test\test_feishu_appium\datas'
+              r'\test_datas.yml', encoding='utf-8') as f:
         all_datas = yaml.safe_load(f)
     datas = all_datas[name]
     return (datas)
