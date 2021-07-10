@@ -4,7 +4,8 @@ from appium import webdriver
 from test_feishu_appium.page.base_page import BasePage
 from test_feishu_appium.page.main_page import MainPage
 
-with open("../datas/feishu_caps.yml") as f:
+with open(r'D:\WORK\jenkins\connect\workspace\windows_appium\feishu_windows_test\test_feishu_appium\datas\feishu_caps'
+          r'.yml') as f:
     datas = yaml.safe_load(f)
     desires = datas['desirecaps']
     ip = datas['server']['ip']
