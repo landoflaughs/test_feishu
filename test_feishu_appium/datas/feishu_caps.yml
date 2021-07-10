@@ -1,0 +1,12 @@
+desirecaps:
+  platformName: "android"
+  deviceName:   "Nox"
+#  appPackage: "com.ss.android.lark"
+#  appActivity: ".main.app.MainActivity"
+  noReset: "true"
+  skipServerInstallation: "true"
+  skipDeviceInitialization: "true"
+
+server:
+  ip: 127.0.0.1
+  port: 4723
