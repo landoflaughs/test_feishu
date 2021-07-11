@@ -26,7 +26,6 @@ class TestGroup:
         self.chat_ids.append(r['data']['chat_id'])
         print("created", self.chat_ids)
         assert r.get("code") == 0
-        return self.chat_ids
 
     @pytest.mark.run(order=2)
     @allure.story("get all chat_ids")
