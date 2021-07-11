@@ -7,7 +7,8 @@ class Base:
     def __init__(self):
         self.s = requests.Session()
         self.token = self.get_token()
-        self.s.params = {"access_token": self.token}
+        self.s.headers = {"Authorization": f"Bearer {self.token}"}
+        print(self.s.headers)
 
     def get_token(self):
         url = "https://open.feishu.cn/open-apis/auth/v3/tenant_access_token/internal/"
@@ -16,6 +17,7 @@ class Base:
             "app_secret": "gHS6GMdHfnONwr6HXdpRidEFKHodXGSH"
         }
         r = self.s.post(url, params=params)
+        print(r.json()['tenant_access_token'])
         return r.json()['tenant_access_token']
 
     def send(self, *args, **kwargs):

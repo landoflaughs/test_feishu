@@ -1,3 +1,5 @@
+import pytest
+
 from test_feishu_selinum.page.main_page import MainPage
 import allure
 
@@ -8,7 +10,9 @@ import allure
 
 @allure.feature('selenium test')
 class TestChatGroup:
+
     @allure.story('test add and remove a group')
-    def test_add_group(self):
+    @pytest.mark.parametrize('name', ['group1', 'group2'])
+    def test_add_group(self,name):
         main = MainPage()
-        main.goto_create_group().create_group("group1").remove_group()
+        main.goto_create_group().create_group(name).remove_group()
