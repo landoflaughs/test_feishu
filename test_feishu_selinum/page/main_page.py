@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 from test_feishu_selinum.page.create_group_page import CreateGroupPage
+from test_feishu_selinum.page.remove_group_page import RemoveGroupPage
 
 
 class MainPage:
@@ -20,3 +21,6 @@ class MainPage:
         self.driver.find_element(By.XPATH,
                                  "//*[@class = 'quick-jump-menu__item']").click()
         return CreateGroupPage(self.driver)
+
+    def goto_delete_group(self):
+        return RemoveGroupPage(self.driver)
